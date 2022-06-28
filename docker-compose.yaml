@@ -1,0 +1,19 @@
+version: '3'
+
+services:  
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+        - 4200:80
+  backend:
+    container_name: backend
+    build: ./backend
+    ports:
+       - 8000:5000
+       - 8001:80
+  db:
+    container_name: mssql
+    build: ./DB
+    ports:
+        - 1433:1433
